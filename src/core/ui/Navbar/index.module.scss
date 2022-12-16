@@ -1,0 +1,32 @@
+
+
+.container{
+    text-align: center;
+    background-color: white;
+    padding: 24px;
+    display: flex;
+}
+
+.svgIcons{
+    height: 35px;
+    width: 45px;
+    cursor: pointer;
+  }
+
+.logo{
+    display: flex;
+    margin-left: 0.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+.logoText{
+    margin-bottom: auto;
+    margin-top: auto;
+    width: 150px;
+    height: 27px;
+    img{
+      width: 150px;
+      height: 27px;
+    }
+  }

@@ -1,0 +1,139 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+
+.sidebar {
+  min-height: 100%;
+  height: 100%;
+  width: 4.2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: 0.3s width;
+  
+}
+
+.boxiconContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0px 5px 10px;
+  color: $blackLighter;
+  margin-top: 15px;
+  &:hover{
+    background-color: #707070;
+    color: white;
+    border-radius: 0px 12px 12px 0px;
+  }
+}
+
+.boxicon {
+  animation-iteration-count: 1;
+  z-index: 2;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  background-color: #707070;
+  opacity: 1;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -0.25rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.boxicon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  background-color: #373737;
+  opacity: 0;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -0.25rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+}
+
+.boxiconContainer:hover > .boxicon::after {
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.sidebar > *:first-child {
+  margin-top: 3rem;
+}
+// .sidebar > *:last-child {
+//   margin-top: auto;
+//   margin-bottom: 2rem;
+// }
+
+.finalIcon {
+  background-color: $redDark;
+}
+
+.description {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 4rem;
+  z-index: 10;
+  font-weight: bold;
+  margin: 0;
+  transition: 0.2s opacity;
+}
+
+.activeDescription {
+  color: white;
+}
+
+.expanded {
+  width: 15rem;
+  align-items: flex-start;
+}
+
+.showDescription {
+  opacity: 1;
+}
+
+.hideDescription{
+  display: none;
+}
+
+.container {
+  display: flex;
+}
+
+.text {
+  color: white;
+  z-index: 100;
+  margin: 0 auto;
+  align-self: center;
+  font-size: 32px;
+}
+
+@media screen and (max-height: 550px) {
+  .boxicon {
+    margin-left: 1.2rem;
+  }
+  .firstAndLastTrashFix {
+    margin-left: 1.2rem;
+  }
+}
+
+.svgIcons{
+  height: 35px;
+  width: 45px;
+}

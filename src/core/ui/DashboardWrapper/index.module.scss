@@ -1,0 +1,28 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.main{
+    width: 100%;
+}
+
+.content{
+    background-color: $secondary;
+    height: 100%;
+    display: flex;
+}
+
+.sideUserShow{
+    width: auto;
+}
+.sideUserHide{
+    width:0px;
+}

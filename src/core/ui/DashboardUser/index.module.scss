@@ -1,0 +1,129 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    height: 100%;
+    padding: 15px;
+    background-color: white;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.header{
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.name{
+    margin: auto;
+}
+.image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.item{
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    background-color: $blue;
+    padding: 10px;
+    color: $secondary;
+}
+
+.actions{
+    margin-top: 25px;
+    font-weight: bold;
+}
+.items{
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.framworks{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateBtn{
+    width: max-content !important;
+    padding: 9.5px 15px !important;
+    border-radius: 7px !important;
+    background-color: $blue !important;
+    float: right !important;
+    svg {
+        width: 10px;
+        height: 10px;
+        fill: $white;
+        transform: rotate(90deg);
+        margin-left: 10px;
+    }
+}
+
+.date{
+    width: 200px;
+}
+
+.user{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.role{
+    font-size: small;
+    font-weight: normal;
+}
+
+.hideSide{
+    position: absolute;
+    left: 97%;
+    top: 0%;
+    cursor: pointer;
+    svg{
+        width: 25px;
+        height: 25px;
+        fill: black;
+        transform: rotate(0deg);
+    }
+}
+
+.showSide{
+    svg{
+        transform: rotate(180deg);
+    }
+}
+.selectFramwork{
+    width: max-content !important;
+}
+
+.dateDiv{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: $bg;
+}
+
+.danger{
+    color: $redDark;
+    letter-spacing: 0px;
+    opacity: 1;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.privacy{
+    letter-spacing: 0px;
+    color: $blue;
+    opacity: 1;
+    font-size: 10px;
+    margin-top: 5px;
+}
