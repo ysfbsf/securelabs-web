@@ -11,21 +11,63 @@ import logo from '../../../assets/images/logo.png'
 // components
 import {SvgSprite} from '../../ui/SvgSprite'
 import {Btn} from '../../ui/Btn'
-import { Question1 } from './Question1'
-import { Question2 } from './Question2'
-import { Question3 } from './Question3'
-import { Question4 } from './Question4'
-import { Question5 } from './Question5'
-import { Question6 } from './Question6'
-import { Question7 } from './Question7'
-import { Question8 } from './Question8'
-import { Question9 } from './Question9'
-import { Question10 } from './Question10'
-import { Question11 } from './Question11'
-import { Question12 } from './Question12'
+import { Question } from './Question'
+import { Questions } from '../../../StaticData'
 
 export const Questionnaire = () => {
     const [step, setStep] = useState(1);
+    const [activNext, setActiveNext] = useState(false)
+    const [response, setResponse] = useState([
+        {
+            id:1,
+            res : '',
+        },
+        {
+            id:2,
+            res : '',
+        },
+        {
+            id:3,
+            res : '',
+        },
+        {
+            id:4,
+            res : '',
+        },
+        {
+            id:5,
+            res : '',
+        },
+        {
+            id:6,
+            res : '',
+        },
+        {
+            id:7,
+            res : '',
+        },
+        {
+            id:8,
+            res : '',
+        },
+        {
+            id:9,
+            res : '',
+        },
+        {
+            id:10,
+            res : '',
+        },
+        {
+            id:11,
+            res : '',
+        },
+        {
+            id:12,
+            res : '',
+        },
+    ])
+
     const Step = ({active}) => (
         <div 
             className={cn(styles.CustomStep, {
@@ -33,6 +75,11 @@ export const Questionnaire = () => {
             })}
         ></div>
     );
+
+    const handelSubmit = () =>{
+        console.log(response)
+    }
+
   return (
     <div className={styles.container}>
         <div className={styles.header}>
@@ -44,35 +91,22 @@ export const Questionnaire = () => {
             </div>
         </div>
         <div className={styles.steps}> 
-        <Step active={step === 1}/>
-        <Step active={step === 2}/>
-        <Step active={step === 3}/>
-        <Step active={step === 4}/>
-        <Step active={step === 5}/>
-        <Step active={step === 6}/>
-        <Step active={step === 7}/>
-        <Step active={step === 8}/>
-        <Step active={step === 9}/>
-        <Step active={step === 10}/>
-        <Step active={step === 11}/>
-        <Step active={step === 12}/>
+        {Questions.map( question => (
+            <Step key={question.id} active={step === question.id}/>
+        ))}
         </div>
         <div className={styles.stepsNmb}> Question {step} </div>
-        {step === 1 && <Question1 />}
-        {step === 2 && <Question2 />}
-        {step === 3 && <Question3 />}
-        {step === 4 && <Question4 />}
-        {step === 5 && <Question5 />}
-        {step === 6 && <Question6 />}
-        {step === 7 && <Question7 />}
-        {step === 8 && <Question8 />}
-        {step === 9 && <Question9 />}
-        {step === 10 && <Question10 />}
-        {step === 11 && <Question11 />}
-        {step === 12 && <Question12 />}
+            <Question 
+                question={Questions[step-1]} 
+                setResponse={setResponse} 
+                response={response} 
+                step={step}
+                setActiveNext={setActiveNext}
+            />
         <div className={styles.suivant}> 
-         {step > 1 && <Btn className={styles.btnSuivant} onClick ={()=>{setStep(step-1)}}> Last Question </Btn> } 
-         {step < 12 && <Btn className={styles.btnSuivant} onClick ={()=>{setStep(step+1)}}> Next Question </Btn> }
+         <Btn className={styles.btnSuivant} disable={step<=1} onClick ={()=>{setStep(step-1)}}> Last Question </Btn>
+         {step <  12 && <Btn className={styles.btnSuivant} disable={!activNext && response[step-1].res === ''} onClick ={()=>{setStep(step+1); setActiveNext(false)}}> Next Question </Btn> }
+         {step >= 12 && <Btn className={cn(styles.btnSuivant, styles.submit)} disable={response.find(res => res.res === '')} onClick={handelSubmit} > Submit </Btn>}
         </div>
     </div>
   )
