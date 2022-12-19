@@ -64,7 +64,7 @@ export const DashboardUser = ({showSide, setShowSide}) => {
         </div>
           
         <div className={styles.actions}> 
-          actions Item
+          Actions Item
           <p className={styles.danger}>Schedule Audit for CCPA Compliance</p> 
         </div>
         <div className={styles.items}> 

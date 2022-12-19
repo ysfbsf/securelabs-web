@@ -28,6 +28,9 @@
     background-color: #707070;
     color: white;
     border-radius: 0px 12px 12px 0px;
+    .svgIcons{
+      fill: #fff;
+    }
   }
 }
 
@@ -136,4 +139,8 @@
 .svgIcons{
   height: 35px;
   width: 45px;
+}
+
+.activeSvg{
+  fill: #fff;
 }

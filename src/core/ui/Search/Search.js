@@ -6,7 +6,7 @@ export const Search = () => {
   return (
     <div className={styles.container}>
         <SvgSprite spriteID={'search'} className={styles.svgSearch}/>
-        <input type={'text'} className={styles.input} placeholder='search'/>
+        <input type={'text'} className={styles.input} placeholder='Search'/>
     </div>
   )
 }
