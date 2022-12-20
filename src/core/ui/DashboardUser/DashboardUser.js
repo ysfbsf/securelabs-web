@@ -1,52 +1,32 @@
 import React, { useState } from 'react'
 import styles from './index.module.scss'
-import image from '../../../assets/images/test2022.png'
 import { Select } from '../Select'
 import {DateInput} from '../DateInput'
-import cn from 'classnames'
 
-export const DashboardUser = ({showSide, setShowSide}) => {
+export const DashboardUser = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [values, setValues] = useState([
     {
         id: 1,
-        name: 'Framwork 1',
+        name: 'CCPA',
         value: '1',
     },
     {
         id: 2,
-        name: 'Framwork 2',
+        name: 'PCI-DSS',
         value: '2',
     },
     {
         id: 3,
-        name: 'Framwork 3',
+        name: 'SOC',
         value: '3',
     },
 ])
 
   return (<>
-      
-      {/* <div className={cn(styles.hideSide, {
-        [styles.showSide] : showSide,
-      })} onClick={()=> setShowSide(!showSide)}>
-        <SvgSprite spriteID={'arrowNext'} />
-      </div> */}
-      
-      <div className={cn(styles.container, {
-        [styles.sideUserHide]  : showSide,
-      })}>      
-        <div className={styles.header}>
-          <div>
-            <img className={styles.image} src={image} alt="ima"/>
-          </div>
-          <div className={styles.user}>
-            <div className={styles.name}> Hamza Maarouf </div>
-            <div className={styles.role}> Super Admin </div>
-          </div>
-        </div>
+      <div className={styles.container}>      
         <div className={styles.framworks}> 
-            <Select className={styles.select} values={values} setValues={setValues}/>
+            <Select className={styles.selectFramwork} values={values} setValues={setValues}/>
             <DateInput className={styles.dateBtn} setStartDate={setStartDate} startDate={startDate}/>
         </div>
         <div className={styles.listFramworks}> 

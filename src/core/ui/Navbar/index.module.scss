@@ -1,10 +1,12 @@
-
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
 
 .container{
     text-align: center;
     background-color: white;
     padding: 24px;
     display: flex;
+    justify-content: space-between;
 }
 
 .svgIcons{
@@ -29,4 +31,50 @@
       width: 150px;
       height: 27px;
     }
-  }
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  width: 220px;
+}
+
+.name{
+  margin: auto;
+  font-size: 12px;
+}
+
+.image{
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  margin: auto;
+}
+
+.user{
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+.role{
+  font-size: 12px;
+  font-weight: normal;
+  color: $black;
+  opacity: 70%;
+  text-align: left;
+}
+
+.settingsIcon{
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.imageProfile{
+  display: inline-grid;
+  display: -ms-inline-grid;
+  display: -moz-inline-grid;
+}

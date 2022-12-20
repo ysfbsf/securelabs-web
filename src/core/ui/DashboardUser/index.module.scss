@@ -4,7 +4,7 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 18rem;
+    width: 250px !important;
     height: 100%;
     padding: 15px;
     background-color: white;
@@ -37,6 +37,8 @@
     background-color: $blue;
     padding: 10px;
     color: $secondary;
+    text-align: center;
+    font-size: 12px;
 }
 
 .actions{
@@ -56,10 +58,14 @@
 
 .dateBtn{
     width: max-content !important;
-    padding: 9.5px 15px !important;
+    padding: 11px 15px !important;
     border-radius: 7px !important;
     background-color: $blue !important;
     float: right !important;
+    text-align: left !important;
+    font-size: 11px !important;
+    letter-spacing: 0px !important;
+    opacity: 1 !important;
     svg {
         width: 10px;
         height: 10px;
@@ -83,26 +89,12 @@
     font-weight: normal;
 }
 
-.hideSide{
-    position: absolute;
-    left: 97%;
-    top: 0%;
-    cursor: pointer;
-    svg{
-        width: 25px;
-        height: 25px;
-        fill: black;
-        transform: rotate(0deg);
-    }
-}
-
-.showSide{
-    svg{
-        transform: rotate(180deg);
-    }
-}
 .selectFramwork{
-    width: max-content !important;
+    width: 174px !important;
+    text-align: left !important;
+    font-size: 11px !important;
+    letter-spacing: 0px !important;
+    opacity: 1 !important;
 }
 
 .dateDiv{

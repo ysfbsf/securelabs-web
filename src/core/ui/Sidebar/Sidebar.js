@@ -87,6 +87,7 @@ export const Sidebar = ({activeItem, expanded, setExpanded}) => {
             <div>
               <SvgSprite className={cn(styles.svgIcons,{
                 [styles.activeSvg] : active === item.id,
+                [styles.hideSvg] : !expanded,
               })} spriteID={item.iconName} />
               <div
                 className={cn(styles.description, { 

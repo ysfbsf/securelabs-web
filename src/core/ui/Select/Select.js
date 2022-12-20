@@ -14,17 +14,17 @@ export const Select = ({className,btnSwith,values, setValues, text, selectFullWi
     const [selectData] = useState([
         {
             id: 1,
-            name: 'Framwork 1',
+            name: 'CCPA',
             value: '1',
         },
         {
             id: 2,
-            name: 'Framwork 2',
+            name: 'PCI-DSS',
             value: '2',
         },
         {
             id: 3,
-            name: 'Framwork 3',
+            name: 'SOC',
             value: '3',
         },
     ])
