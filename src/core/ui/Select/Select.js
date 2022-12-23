@@ -9,7 +9,7 @@ import styles from './index.module.scss'
 
 import { SvgSprite } from '../SvgSprite/SvgSprite'
 
-export const Select = ({className,btnSwith,values, header, radiusBorder, whiteHeader, initValues, setValues, text, selectFullWidth}) => {
+export const Select = ({className,btnSwith,values, header, blueHeader, radiusBorder, whiteHeader, initValues, setValues, text, selectFullWidth}) => {
     
     const [selectData] = useState([
         {
@@ -76,6 +76,7 @@ export const Select = ({className,btnSwith,values, header, radiusBorder, whiteHe
                 [styles.btnSwith]: btnSwith,
                 [styles.headerSelect] : true,
                 [styles.whiteHeader] : whiteHeader,
+                [styles.blueHeader] : blueHeader,
             })} onClick={toggleIsOpened}>
                 {
                     text && (
@@ -99,13 +100,16 @@ export const Select = ({className,btnSwith,values, header, radiusBorder, whiteHe
                                     className={cn(styles.selectItem, {
                                         [styles.selectItemActive]:true ,
                                         [styles.selectItemRight]: text,
+                                        [styles.whiteDrop] : blueHeader,
                                     })}
                                      key={select.id}
                                      onClick={() => changeValue(select)}
                                 >
                                     {initValues && <div className={styles.divColor} style={{backgroundColor : select.color}}></div>}
                                     {select.name}
-                                    
+                                    {
+                                       !initValues && values.find(v => v.value === select.value) && <SvgSprite spriteID={'check'} />
+                                    }
                                 </div>
                             ))
                         }

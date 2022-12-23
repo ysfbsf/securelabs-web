@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { DashboardRisk } from '../DashboardRisk/DashboardRisk'
 import { DashboardUser } from '../DashboardUser/DashboardUser'
 import { Navbar } from '../Navbar'
@@ -6,9 +6,7 @@ import { Sidebar } from '../Sidebar/Sidebar'
 import styles from './index.module.scss'
 
 export const DashboardWrapper = ({children, activeItem, expanded, setExpanded, sideUser}) => {
-    useEffect(()=>{
-        console.log(sideUser)
-    }, [sideUser])
+
     return (
     <div className={styles.container}>
         <div className={styles.main}>

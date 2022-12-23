@@ -31,7 +31,7 @@ export const Details = ({data}) => {
                 <div className={styles.logs}>Logs</div>
                 <Select 
                     className={styles.view} 
-                    whiteHeader 
+                    blueHeader 
                     initValues={values} 
                     setValues={setNewValue}
                     header="View All"

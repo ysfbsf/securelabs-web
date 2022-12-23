@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Select } from '../Select'
 import styles from './index.module.scss'
+import cn from 'classnames'
 
 export const DashboardRisk = () => {
     const [values] = useState([
@@ -53,7 +54,9 @@ export const DashboardRisk = () => {
             header="Assign Risk Level"
             radiusBorder
         />  
-        <div className={styles.divRisk} style={{backgroundColor : newValue.color}}> <p className={styles.riskText}>{newValue.name}</p> </div>
+        <div className={cn(styles.divRisk, {
+                [styles.whiteColor] : newValue === values[5]
+            })} style={{backgroundColor : newValue.color}}> <p className={styles.riskText}>{newValue.name}</p> </div>
       </div>
   )
 }

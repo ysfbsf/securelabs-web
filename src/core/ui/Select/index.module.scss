@@ -62,9 +62,9 @@
     cursor: pointer;
     transition: all .15s;
     width: max-content;
-    &:hover {
-        background-color: rgba($blue, .5);
-    }
+    // &:hover {
+    //     background-color: rgba($blue, .5);
+    // }
 
     svg {
         width: 10px;
@@ -167,4 +167,21 @@
     max-height: max-content !important;
     border: 1px solid #F1F1F5;
     background-color: white !important;
+}
+
+.blueHeader{
+    box-shadow: none;
+    color: $blue !important;
+    background-color: $secondary;
+    padding-bottom: 2px !important;
+    &:hover{
+        background-color: $secondary;
+    }
+    svg{
+        fill: $blue !important;
+    }
+}
+
+.whiteDrop{
+    background-color: #fff !important;
 }

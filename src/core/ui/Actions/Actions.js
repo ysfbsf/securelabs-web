@@ -24,9 +24,9 @@ export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions}) => {
         return () => document.removeEventListener('click', handleClick)
     })
 
-    useEffect(()=>{
-        console.log(isOpenedActions)
-    }, [isOpenedActions])
+    // useEffect(()=>{
+    //     console.log(isOpenedActions)
+    // }, [isOpenedActions])
     return (
         <div className={styles.actions} ref={action}>
             {!noIcon && 
