@@ -11,7 +11,7 @@ import { Documents } from '../core/modules/Documents'
 import { Plan } from '../core/modules/Plan'
 import { Report } from '../core/modules/Report'
 import { Resources } from '../core/modules/Resources'
-// import { Questionnaire } from '../core/modules/Questionnaire/Questionnaire'
+import { Questionnaire } from '../core/modules/Questionnaire/Questionnaire'
 
 export const MainRoutes = ({expanded, setExpanded}) => {
     return (
@@ -24,7 +24,7 @@ export const MainRoutes = ({expanded, setExpanded}) => {
             <Route path='/calendar' element={<Calendar expanded={expanded} setExpanded={setExpanded}/>} exact />
             <Route path='/settings' element={<Settings expanded={expanded} setExpanded={setExpanded}/>} exact />
             <Route path='/help' element={<Help /> } exact />
-            {/* <Route path='/test' element={<Questionnaire />} exact /> */}
+            <Route path='/questionnaire' element={<Questionnaire />} exact />
 
             <Route path='/404' element={<NotFound/>} exact/>
             <Route path='*' element={<Navigate to='/home' replace/>}/>
