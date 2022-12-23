@@ -1,0 +1,64 @@
+
+
+.divCheckElement{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & + & {
+        margin-top: 0;
+    }
+}
+
+.panChekElement{
+    margin-right: 0.75em;
+}
+
+.ChekElementTrue{
+    flex: 1;
+    opacity: 0.666;
+    text-decoration: 'line-through';
+    &:focus {
+      outline: none;
+    }      
+}
+
+.ChekElementFalse{
+    flex: 1;
+    opacity: 1;
+    text-decoration:'none';
+    &:focus {
+      outline: none;
+    }      
+}
+
+.buttonReversedAct{
+    cursor: pointer;
+    color: white;
+}
+.buttonReversedNo{
+    cursor: pointer;
+    color: #aaa;
+}
+.buttonNoReversedAct{
+    cursor: pointer;
+    color: black;
+}
+.buttonNoReversedNo{
+    cursor: pointer;
+    color: #ccc;
+}
+
+.customToulbar{
+    background-color: #fff !important;
+    border-top: 3px solid #ccc !important;
+    border-bottom: 3px solid #ccc !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+
+.container{
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+}

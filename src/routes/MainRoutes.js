@@ -23,7 +23,7 @@ export const MainRoutes = ({expanded, setExpanded}) => {
             <Route path='/resources' element={<Resources expanded={expanded} setExpanded={setExpanded}/>} exact />
             <Route path='/calendar' element={<Calendar expanded={expanded} setExpanded={setExpanded}/>} exact />
             <Route path='/settings' element={<Settings expanded={expanded} setExpanded={setExpanded}/>} exact />
-            <Route path='/help' element={<Help /> } exact />
+            <Route path='/help' element={<Help expanded={expanded} setExpanded={setExpanded}/> } exact />
             {/* <Route path='/test' element={<Questionnaire />} exact /> */}
 
             <Route path='/404' element={<NotFound/>} exact/>

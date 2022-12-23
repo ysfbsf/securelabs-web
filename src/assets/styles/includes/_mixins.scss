@@ -56,11 +56,11 @@
     }
 
     &::-webkit-scrollbar-track {
-        background: $scrollBarBG;
+        background: $secondary;
     }
 
     &::-webkit-scrollbar-thumb {
-        background: $secondary;
+        background: $blue;
     }
 }
 
