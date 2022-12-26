@@ -26,6 +26,9 @@
     box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
     z-index: 9999;
     transition: 1.5s all ease-in;
+    @media screen and (max-width: 1200px) {
+      width: 500px;
+    }
   }
 
   .data{
