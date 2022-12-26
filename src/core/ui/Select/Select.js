@@ -9,7 +9,7 @@ import styles from './index.module.scss'
 
 import { SvgSprite } from '../SvgSprite/SvgSprite'
 
-export const Select = ({className,btnSwith,values, header, blueHeader, radiusBorder, whiteHeader, initValues, setValues, text, selectFullWidth}) => {
+export const Select = ({className,btnSwith,values, value, header, blueHeader, radiusBorder, whiteHeader, initValues, setValues, text, selectFullWidth}) => {
     
     const [selectData] = useState([
         {
@@ -31,7 +31,7 @@ export const Select = ({className,btnSwith,values, header, blueHeader, radiusBor
 
     const select = useRef()
     const {isOpened, toggleIsOpened} = useToggle()
-    const [activeName] = useState(initValues ? header :'All Framworks')
+    const [activeName, setActive] = useState(value?value.name:(initValues ? header :'All Framworks'))
     
     const changeValue = select => {
         if(!initValues){
@@ -49,7 +49,9 @@ export const Select = ({className,btnSwith,values, header, blueHeader, radiusBor
             }
             toggleIsOpened()
         }
-        
+        if(value){
+            setActive(select.name)
+        }
     }
 
     const handleClick = e => {

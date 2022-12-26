@@ -21,6 +21,7 @@ export const Documents = ({expanded, setExpanded}) => {
   const [data, setData] = useState()
   const [sideUser, setSideUser] = useState(false)
   const {isOpened, toggleIsOpened} = useToggle()
+  const [activeItem, setActiveItem] = useState(1)
 
   const actions = useRef([
     {
@@ -66,11 +67,21 @@ export const Documents = ({expanded, setExpanded}) => {
     <DashboardWrapper activeItem={2} expanded={expanded} setExpanded={setExpanded} sideUser={sideUser}>
       <div className={styles.container}>
         <div className={styles.images}>
-          <img src={image9} alt='GDPR'  className={styles.imgs}/>
-          <img src={image5} alt='CCPA'  className={styles.imgs}/>
-          <img src={image10} alt='HIPAA' className={styles.imgsHipaa}/>
-          <img src={image7} alt='PSI'   className={styles.imgs}/>
-          <img src={image8} alt='SOX'   className={styles.imgs}/>
+          <img src={image9} alt='GDPR'  className={cn(styles.imgs, {
+            [styles.active] : activeItem === 1,
+          })} onClick={()=>{setActiveItem(1)}}/>
+          <img src={image5} alt='CCPA'  className={cn(styles.imgs, {
+            [styles.active] : activeItem === 2,
+          })} onClick={()=>{setActiveItem(2)}}/>
+          <img src={image10} alt='HIPAA' className={cn(styles.imgsHipaa, {
+            [styles.active] : activeItem === 3,
+          })} onClick={()=>{setActiveItem(3)}}/>
+          <img src={image7} alt='PSI'   className={cn(styles.imgs, {
+            [styles.active] : activeItem === 4,
+          })} onClick={()=>{setActiveItem(4)}}/>
+          <img src={image8} alt='SOX'   className={cn(styles.imgs, {
+            [styles.active] : activeItem === 5,
+          })} onClick={()=>{setActiveItem(5)}}/>
         </div>
         <div className={styles.content}>
             <div className={styles.headerListe} onClick={()=>setShowData(!showData)}>Controls <SvgSprite spriteID={'arrow'}/></div>
@@ -95,7 +106,7 @@ export const Documents = ({expanded, setExpanded}) => {
                     <div className={styles.stakeholders} onClick={toggleIsOpened}>
                       Assign Stakeholders <SvgSprite spriteID={'arrow'}/>
                     </div>
-                    <Actions actions={actions.current} noIcon isOpenedActions={isOpened}/>
+                    <Actions actions={actions.current} noIcon isOpenedActions={isOpened} toggleIsOpenedActions={toggleIsOpened}/>
                   </div>
                 </div>
                 <Details data={data} />

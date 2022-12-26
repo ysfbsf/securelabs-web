@@ -7,14 +7,15 @@ import { useMobile } from '../../hooks/useMobile'
 import { useToggle } from '../../hooks/useToggle'
 import { SvgSprite } from '../SvgSprite/SvgSprite'
 
-export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions}) => {
+export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions, toggleIsOpenedActions}) => {
     const isTablet = useMobile(769)
-    const {isOpened, toggleIsOpened} = useToggle()
+    const {isOpened, toggleIsOpened} = useToggle(isOpenedActions)
     const action = useRef()
 
     const handleClick = e => {
         if (isOpened && !action.current.contains(e.target)) {
             toggleIsOpened()
+            toggleIsOpenedActions()
         }
     }
 
@@ -24,9 +25,6 @@ export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions}) => {
         return () => document.removeEventListener('click', handleClick)
     })
 
-    // useEffect(()=>{
-    //     console.log(isOpenedActions)
-    // }, [isOpenedActions])
     return (
         <div className={styles.actions} ref={action}>
             {!noIcon && 

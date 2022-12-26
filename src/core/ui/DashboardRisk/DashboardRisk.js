@@ -56,7 +56,9 @@ export const DashboardRisk = () => {
         />  
         <div className={cn(styles.divRisk, {
                 [styles.whiteColor] : newValue === values[5]
-            })} style={{backgroundColor : newValue.color}}> <p className={styles.riskText}>{newValue.name}</p> </div>
+            })} style={{backgroundColor : newValue.color}}> <p className={cn(styles.riskText,{
+                [styles.whiteText] : newValue === values[0] || newValue === values[4]
+            })}>{newValue.name}</p> </div>
       </div>
   )
 }

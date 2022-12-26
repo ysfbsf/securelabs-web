@@ -9,11 +9,19 @@
 .content{
     width: 100%;
     height: 200px;
-    overflow: auto;
-    // @include customScroll;
     background-color: #fff;
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
+}
+
+.body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    @include customScroll;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 0px 10px;
 }
 
 .title{
@@ -28,7 +36,7 @@
     margin: 20px 0px;
     background: #fff;
     border-radius: 12px;
-    padding: 50px;
+    padding: 35px 35px 10px 35px;
 }
 
 .logsViews{
@@ -55,4 +63,10 @@
 
 .table{
     padding: 20px 0px;
+}
+
+.actionIcon{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
 }
