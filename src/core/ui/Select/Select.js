@@ -9,7 +9,7 @@ import styles from './index.module.scss'
 
 import { SvgSprite } from '../SvgSprite/SvgSprite'
 
-export const Select = ({className,btnSwith,values, setValues, text, selectFullWidth}) => {
+export const Select = ({className,btnSwith,values, value, header, blueHeader, radiusBorder, whiteHeader, initValues, setValues, text, selectFullWidth}) => {
     
     const [selectData] = useState([
         {
@@ -31,15 +31,27 @@ export const Select = ({className,btnSwith,values, setValues, text, selectFullWi
 
     const select = useRef()
     const {isOpened, toggleIsOpened} = useToggle()
-    const [activeName] = useState('All Framworks')
+    const [activeName, setActive] = useState(value?value.name:(initValues ? header :'All Framworks'))
     
     const changeValue = select => {
-        if(values.find(v=> v.value === select.value))
-            setValues(values.filter( v => v.value !== select.value))
-        else{
-            setValues([...values, select])
+        if(!initValues){
+            if(values.find(v=> v.value === select.value))
+                setValues(values.filter( v => v.value !== select.value))
+            else{
+                setValues([...values, select])
+            }
+            toggleIsOpened()
+        }else{
+            if(initValues.find(v=> v.value === select.value))
+                setValues(initValues.find( v => v.value === select.value))
+            else{
+                setValues(values)
+            }
+            toggleIsOpened()
         }
-        toggleIsOpened()
+        if(value){
+            setActive(select.name)
+        }
     }
 
     const handleClick = e => {
@@ -65,6 +77,8 @@ export const Select = ({className,btnSwith,values, setValues, text, selectFullWi
                 [styles.selectActiveFull]: selectFullWidth,
                 [styles.btnSwith]: btnSwith,
                 [styles.headerSelect] : true,
+                [styles.whiteHeader] : whiteHeader,
+                [styles.blueHeader] : blueHeader,
             })} onClick={toggleIsOpened}>
                 {
                     text && (
@@ -78,20 +92,25 @@ export const Select = ({className,btnSwith,values, setValues, text, selectFullWi
             </div>
             {
                 isOpened && (
-                    <div className={styles.selectDrop}>
+                    <div className={cn(styles.selectDrop,{
+                        [styles.radiusBorder] : radiusBorder,
+                    })}>
                         {
-                            selectData.map(select => (
+                            
+                            (initValues?initValues:selectData).map(select => (
                                 <div
                                     className={cn(styles.selectItem, {
                                         [styles.selectItemActive]:true ,
                                         [styles.selectItemRight]: text,
+                                        [styles.whiteDrop] : blueHeader,
                                     })}
                                      key={select.id}
                                      onClick={() => changeValue(select)}
                                 >
+                                    {initValues && <div className={styles.divColor} style={{backgroundColor : select.color}}></div>}
                                     {select.name}
                                     {
-                                        values.find(v => v.value === select.value) && <SvgSprite spriteID={'check'} />
+                                       !initValues && values.find(v => v.value === select.value) && <SvgSprite spriteID={'check'} />
                                     }
                                 </div>
                             ))

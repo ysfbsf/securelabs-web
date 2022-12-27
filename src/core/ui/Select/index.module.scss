@@ -62,9 +62,9 @@
     cursor: pointer;
     transition: all .15s;
     width: max-content;
-    &:hover {
-        background-color: rgba($blue, .5);
-    }
+    // &:hover {
+    //     background-color: rgba($blue, .5);
+    // }
 
     svg {
         width: 10px;
@@ -131,4 +131,57 @@
 
 .btnSwith{
     height: 34px !important;
+}
+
+.divColor{
+    width: 16px;
+    height: 16px;
+}
+
+.whiteHeader{
+    background-color: #fff;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-align: left;
+    // padding: 10px 5px !important;
+    font-size: 12px !important;
+    svg{
+        fill: #000;
+    }
+
+    &:hover{
+        background-color: #fff;
+    }
+
+    span{
+        font-size: 14px;
+        letter-spacing: 0.88px;
+        color: #1E2022;
+        opacity: 1;
+    }
+}
+
+.radiusBorder{
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    max-height: max-content !important;
+    border: 1px solid #F1F1F5;
+    background-color: white !important;
+}
+
+.blueHeader{
+    box-shadow: none;
+    color: $blue !important;
+    background-color: $secondary;
+    padding-bottom: 2px !important;
+    &:hover{
+        background-color: $secondary;
+    }
+    svg{
+        fill: $blue !important;
+    }
+}
+
+.whiteDrop{
+    background-color: #fff !important;
 }

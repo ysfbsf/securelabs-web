@@ -13,7 +13,7 @@ export const useMobile = (checkWidth = 1025) => {
         checkWindowSize()
 
         return () => window.removeEventListener('resize', checkWindowSize)
-    }, [])
+    })
 
     return isMobile
 }

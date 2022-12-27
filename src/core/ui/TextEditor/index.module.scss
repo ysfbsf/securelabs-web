@@ -1,0 +1,33 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.toolbarClassName{
+    justify-content: center;
+    border: 0px !important;
+    border-bottom: 2px solid #ccc !important;
+    border-top: 2px solid #ccc !important;
+}
+
+.send{
+    display: flex;
+    justify-content: right;
+}
+
+
+.sendIcon{
+    height: 28px;
+    width: 30px;
+    fill: $blue;
+    cursor: pointer;
+}
+
+.dropzone {
+    text-align: center;
+    border: 3px #ccc dashed;
+    width: 100%;
+    margin: auto;
+    cursor: pointer;
+}
+.fileContainer{
+    margin-bottom: 10px;
+}
