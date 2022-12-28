@@ -137,14 +137,14 @@
     border-radius: 50%;
     width: 26px;
     height: 26px;
-    background-color: $btnBG;
+    // background-color: $btnBG;
     transition: all .15s;
 
     span {
         @include centerElement;
         height: 2px;
-        width: 10px;
-        background-color: $secondary;
+        width: 15px;
+        background-color: black;
         border-radius: 2px;
         display: block;
         transition: all .15s;
@@ -162,7 +162,7 @@
         background-color: $secondary;
 
         span {
-            background-color: $secondary;
+            background-color: black;
         }
     }
 }

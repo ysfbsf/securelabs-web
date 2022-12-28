@@ -88,3 +88,19 @@ input[type=file] {
     margin-bottom: 5px !important;
     font-size: smaller;
 }
+
+.rbc-month-header{
+    background-color: #0077ff12 !important;
+    height: 70px !important;
+    color: #999 !important;
+}
+
+.rbc-header{
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    border-bottom:0px !important;
+}
+
+.rbc-header + .rbc-header {
+    border-left: 0px !important;
+}
