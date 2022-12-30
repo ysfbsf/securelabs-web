@@ -5,7 +5,6 @@ import { Details } from '../../ui/Details/Details'
 import { FormReport } from './FormReport'
 import styles from './index.module.scss'
 import { ShowReport } from './ShowReport'
-import cn from 'classnames'
 
 export const Report = ({expanded, setExpanded}) => {
   const [reports, setReports] = useState([])
