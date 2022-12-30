@@ -1,6 +1,14 @@
 @import '/src/assets/styles/includes/vars';
 @import '/src/assets/styles/includes/mixins';
 
+.main{
+    display: flex;
+    height: 100%;
+    .container{
+        flex-grow: 1;
+    }
+}
+
 .teamsPopupTitle {
     padding: 15px;
     text-align: center;

@@ -62,14 +62,22 @@ export const Details = ({data}) => {
     // }, [documents])
     return (
         <div className={styles.container}>
-            <div className={styles.title}>{data.title}</div>
-            <div className={styles.content}>
-                <div className={styles.body}>
-                    {data.body}
+            {data && (
+            <>
+                <div className={styles.title}>{data.title}</div>
+                <div className={styles.content}>
+                    <div className={styles.body}>
+                        {data.body}
+                    </div>
                 </div>
-            </div>
+            </>)}
             <div className={styles.editor}>
-                <TextEditor setDocuments={setDocuments} data={documents}/>
+                <TextEditor 
+                    setData={setDocuments} 
+                    data={documents} 
+                    withFiles 
+                    sendIcon
+                />
             </div>
             <div className={styles.logsViews}>
                 <div className={styles.logs}>Logs</div>

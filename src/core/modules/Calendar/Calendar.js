@@ -10,6 +10,8 @@ import {DataTableComponent} from '../../ui/DataTable'
 import { RBCToolbar } from './RBCToolbar';
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.scss"
+import { CalendarView } from '../../ui/DashboardSide';
+
 
 const localizer = momentLocalizer(moment);
 const DragAndDropCalendar = withDragAndDrop(MyCalendar)
@@ -69,40 +71,45 @@ const resizeEvent = useCallback(
 
   return (
     <DashboardWrapper activeItem={6} expanded={expanded} setExpanded={setExpanded}>
-      <DragAndDropCalendar
-        defaultView="month"
-        events={events}
-        localizer={localizer}
-        onSelectEvent={function noRefCheck(e){console.log(e,'test')}}
-        onSelectSlot={(e)=>{setAddEventPopup(true); setNewEvent(e)}}
-        eventPropGetter={(e)=>eventStyleGetter(e)}
-        selectable
-        resizable
-        style={{height: 800, width: '90%', margin: 'auto', backgroundColor : "#fff", marginTop: "20px", borderRadius: "10px"}}
-        components={{toolbar: RBCToolbar}}
-        onEventDrop={moveEvent}
-        onEventResize={resizeEvent}
-      />
-      {
-        events.length > 0 && (
-          <div className={styles.listeEvents}>
-            <div className={styles.titreTable}> Events Liste </div>
-            <DataTableComponent data={events} events/>
-          </div>
-        )
-      }
-      
-      {addEventPopup && 
-        <Popup big={true} isOpenedPopup={addEventPopup} closePopup={() => setAddEventPopup(false)}>
-          <AddEventComponent
-            closePopup={() => setAddEventPopup(false)} 
-            title = {'Add Event'}
-            newEvent={newEvent}
-            setEvents={setEvents}
+      <div className={styles.main}>
+        <div className={styles.container}>
+          <DragAndDropCalendar
+            defaultView="month"
             events={events}
+            localizer={localizer}
+            onSelectEvent={function noRefCheck(e){console.log(e,'test')}}
+            onSelectSlot={(e)=>{setAddEventPopup(true); setNewEvent(e)}}
+            eventPropGetter={(e)=>eventStyleGetter(e)}
+            selectable
+            resizable
+            style={{height: 800, width: '90%', margin: 'auto', backgroundColor : "#fff", marginTop: "20px", borderRadius: "10px"}}
+            components={{toolbar: RBCToolbar}}
+            onEventDrop={moveEvent}
+            onEventResize={resizeEvent}
           />
-        </Popup>
-      }
+          {
+            events.length > 0 && (
+              <div className={styles.listeEvents}>
+                <div className={styles.titreTable}> Events Liste </div>
+                <DataTableComponent data={events} events/>
+              </div>
+            )
+          }
+          
+          {addEventPopup && 
+            <Popup big={true} isOpenedPopup={addEventPopup} closePopup={() => setAddEventPopup(false)}>
+              <AddEventComponent
+                closePopup={() => setAddEventPopup(false)} 
+                title = {'Add Event'}
+                newEvent={newEvent}
+                setEvents={setEvents}
+                events={events}
+              />
+            </Popup>
+          }
+        </div>
+        <CalendarView />
+      </div>
     </DashboardWrapper>
   )
 }

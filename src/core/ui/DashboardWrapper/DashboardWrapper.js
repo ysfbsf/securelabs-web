@@ -1,11 +1,9 @@
 import React from 'react'
-import { DashboardRisk } from '../DashboardRisk/DashboardRisk'
-import { DashboardUser } from '../DashboardUser/DashboardUser'
 import { Navbar } from '../Navbar'
 import { Sidebar } from '../Sidebar/Sidebar'
 import styles from './index.module.scss'
 
-export const DashboardWrapper = ({children, activeItem, expanded, setExpanded, sideUser}) => {
+export const DashboardWrapper = ({children, activeItem, expanded, setExpanded}) => {
 
     return (
     <div className={styles.container}>
@@ -14,9 +12,10 @@ export const DashboardWrapper = ({children, activeItem, expanded, setExpanded, s
                 <Navbar expanded={expanded} setExpanded={setExpanded}/>
             </div>
             <div className={styles.content}>
-                <Sidebar activeItem={activeItem} expanded={expanded} setExpanded={setExpanded}/>
-                <div className={styles.pages}>{children}</div>
-                {!sideUser ? <DashboardUser/> : <DashboardRisk />}
+                <Sidebar activeItem={activeItem} expanded={expanded}/>
+                <div className={styles.pages}>
+                    {children}
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,146 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.main{
+    display: flex;
+    height: 100%;
+    .container{
+        flex-grow: 1;
+    }
+}
+
+.container{
+    padding: 30px 53px;
+}
+
+.title{
+    text-align: left;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    font-weight: bold;
+    margin: 35px 0;
+}
+
+.editor{
+    margin: 20px 0px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 35px 10px 35px;
+}
+
+.dateTime{
+    font-size: 16px;
+    color: $blue;
+    margin: 10px 0px;
+}
+
+.titlesOfText{
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+.inputReport{
+    background-color: #fff;
+    padding: 8px 15px;
+    width: 206px;
+    border-radius: 20px;
+    border: 1px solid #F1F1F5;
+    margin-top: 20px;
+}
+
+.dateReport{
+    padding: 5px 5px;
+    width: 206px;
+    color: $blue;
+    font-size: 18px;
+}
+
+.listInputs{
+    display: flex;
+    flex-wrap: wrap;
+    .inputReport{
+        margin-right: 50px;
+    }
+    .titlesOfText{
+        margin-left: 5px;
+    }
+    .dateReport{
+        margin-right: 50px;
+    }
+}
+
+.submitbtnReport{
+    display: flex;
+    justify-content: right;
+}
+
+.submitbtn{
+    width: 150px;
+    margin-top: 100px;
+    background-color: $blue;
+    color: #fff;
+    font-size: 12px;
+}
+
+.reportText{
+    color: $blue;
+}
+
+.cardReport{
+    margin: 1px;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.textContent{
+    color: $blue;
+    border-radius: 0px 12px;
+}
+
+.pageHeader{
+    text-align: left;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    font-weight: bold;
+    margin-bottom: 66px;
+}
+
+.HeaderCard{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    padding-top: 0px;
+    font-size: 16px;
+    flex-direction: column;
+    
+    .blue{
+        color: $blue;
+        font-size: 18px;
+    }
+    div{
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+    }
+}
+
+.labelInput{
+    font-size: 16px !important;
+}
+
+.reportDetails{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.reportP{
+    padding: 0px !important;
+}

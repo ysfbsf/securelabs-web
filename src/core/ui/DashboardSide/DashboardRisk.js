@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Select } from '../Select'
+import { Select } from '../../ui/Select'
 import styles from './index.module.scss'
 import cn from 'classnames'
 
@@ -47,7 +47,7 @@ export const DashboardRisk = () => {
   return (
       <div className={styles.container}>    
       <Select 
-            className={styles.selectFramwork} 
+            className={styles.select} 
             whiteHeader 
             initValues={values} 
             setValues={setNewValue}
@@ -55,9 +55,9 @@ export const DashboardRisk = () => {
             radiusBorder
         />  
         <div className={cn(styles.divRisk, {
-                [styles.whiteColor] : newValue === values[5]
+                [styles.riskWhiteColor] : newValue === values[5]
             })} style={{backgroundColor : newValue.color}}> <p className={cn(styles.riskText,{
-                [styles.whiteText] : newValue === values[0] || newValue === values[4]
+                [styles.riskWhiteText] : newValue === values[0] || newValue === values[4]
             })}>{newValue.name}</p> </div>
       </div>
   )

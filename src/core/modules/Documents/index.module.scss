@@ -113,3 +113,11 @@ ul li:hover {
     border: 2px solid $blue;
     padding: 10px;
 }
+
+.main{
+    display: flex;
+    height: 100%;
+    .container{
+        flex-grow: 1;
+    }
+}

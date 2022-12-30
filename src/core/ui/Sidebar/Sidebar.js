@@ -6,7 +6,7 @@ import styles from './index.module.scss'
 import { Link } from "react-router-dom";
 import { SvgSprite } from "../SvgSprite/SvgSprite";
 
-export const Sidebar = ({activeItem, expanded, setExpanded}) => {
+export const Sidebar = ({activeItem, expanded}) => {
   
   let menuItems = [
     {

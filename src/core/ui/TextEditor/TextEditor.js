@@ -7,7 +7,7 @@ import { EditorState } from 'draft-js';
 import {SvgSprite} from '../SvgSprite'
 import {useDropzone} from 'react-dropzone';
 
-export const TextEditor = ({setDocuments, data}) => {  
+export const TextEditor = ({setData, data, withFiles, sendIcon}) => {  
   const {acceptedFiles, getRootProps, getInputProps} = useDropzone();
 
   const [editorState, setEditorState] = useState(
@@ -20,6 +20,9 @@ export const TextEditor = ({setDocuments, data}) => {
     setConvertedContent(html);
   }, [editorState]);
 
+  useEffect(()=>{
+      !sendIcon && setData(convertedContent)
+  }, [convertedContent, sendIcon, setData])
   
   const handelClick = () =>{
     console.log(convertedContent);
@@ -33,7 +36,7 @@ export const TextEditor = ({setDocuments, data}) => {
           lastUpdated : "Sep 13, 2019",
     }
     
-    data && setDocuments([...data, doc])
+    data && setData([...data, doc])
   }
 
   return (
@@ -50,15 +53,19 @@ export const TextEditor = ({setDocuments, data}) => {
             options: ['inline', 'list', 'textAlign', 'link']
           }}
       />
-       <section className={styles.fileContainer}>
+      {withFiles && (
+        <section className={styles.fileContainer}>
           <div {...getRootProps({className: styles.dropzone})}>
-            <input {...getInputProps()} />
+            <input {...getInputProps()}/>
             <p>{acceptedFiles.length>0 ? 'File uploaded successfully' :  'Drag & drop some files here, or click to select files'}</p>
           </div>
         </section>
-      <div className={styles.send}>
-        <SvgSprite className={styles.sendIcon} spriteID={'send'} onClick={handelClick}/>
-      </div>
+      )}
+      {sendIcon && (
+        <div className={styles.send}>
+          <SvgSprite className={styles.sendIcon} spriteID={'send'} onClick={handelClick}/>
+        </div>
+      )}
       
     </>
   )

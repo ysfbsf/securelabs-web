@@ -1,6 +1,7 @@
 @import '/src/assets/styles/includes/vars';
 @import '/src/assets/styles/includes/mixins';
 
+
 .container{
     display: flex;
     flex-direction: column;
@@ -13,6 +14,21 @@
     transition: all .2s ease;
 }
 
+.maxContent{
+    width: max-content !important;
+}
+
+.select{
+    width: 200px !important;
+    &>div{
+        width: 100% !important;
+        svg{
+            margin-left: auto;
+        }
+    }
+}
+
+// Side User
 .header{
     display: flex;
     padding-bottom: 20px;
@@ -118,4 +134,46 @@
     opacity: 1;
     font-size: 10px;
     margin-top: 5px;
+}
+
+// Side Risk
+.divRisk{
+    width: 184px;
+    height: 60px;
+    // background: #F2AF3E 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+    opacity: 1;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.riskText{
+    letter-spacing: 1px;
+    // color: #FFFFFF;
+    opacity: 1;
+}
+
+.riskWhiteColor{
+    border: 1px solid #999;
+}
+.riskWhiteText{
+    color: white;
+}
+
+// Side Calendar
+
+
+// side Report
+.btnReports{
+    color: #fff !important;
+    background-color: $blue !important;
+    width: 200px !important;
+    margin-bottom: 15px !important;
+}
+
+.reportText{
+    color: $blue;
+    padding: 5px 5px;
+    font-weight: bold;
+    font-size: 11px;
 }
