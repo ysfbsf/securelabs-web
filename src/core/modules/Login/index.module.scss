@@ -1,0 +1,93 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form{
+    width: 50%;
+    height: 100%;
+    padding: 150px;
+    background-color: $secondary;
+}
+
+.image{
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+}
+
+.Header{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 25px 0px;
+}
+
+.label{
+    padding-top: 20px;
+    color: #999;
+    font-size: 16px;
+}
+
+.input{
+    border: 1px solid $secondary;
+    border-radius: 4px;
+    box-shadow: 0 0 9pt 0.2pt #eee;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 16px;
+    width: 400px;
+    margin-top: 3px;
+}
+
+.loginInputs{
+    margin-bottom: 50px;
+}
+
+.btn{
+    width: 400px;
+    padding: 20px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btnSubmit{
+    background-color: rgb(62, 62, 255);
+    color: #fff;
+    font-weight: bold;
+}
+
+.btnGoogle{
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+        margin-right: 10px;
+    }
+}
+
+.signUpLink{
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.eyeIcon{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 478px;
+    left: 518px;;
+}
+
+.googleIcon{
+    width: 25px;
+    height: 25px;
+}

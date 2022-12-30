@@ -12,6 +12,7 @@ import { Plan } from '../core/modules/Plan'
 import { Report } from '../core/modules/Report'
 import { Resources } from '../core/modules/Resources'
 import { Questionnaire } from '../core/modules/Questionnaire/Questionnaire'
+import { Login } from '../core/modules/Login'
 
 export const MainRoutes = ({expanded, setExpanded}) => {
     return (
@@ -25,6 +26,7 @@ export const MainRoutes = ({expanded, setExpanded}) => {
             <Route path='/settings' element={<Settings expanded={expanded} setExpanded={setExpanded}/>} exact />
             <Route path='/help' element={<Help expanded={expanded} setExpanded={setExpanded}/>} exact />
             <Route path='/questionnaire' element={<Questionnaire />} exact />
+            <Route path='/login' element={<Login />} exact />
 
             <Route path='/404' element={<NotFound/>} exact/>
             <Route path='*' element={<Navigate to='/home' replace/>}/>
