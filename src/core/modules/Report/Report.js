@@ -5,6 +5,7 @@ import { Details } from '../../ui/Details/Details'
 import { FormReport } from './FormReport'
 import styles from './index.module.scss'
 import { ShowReport } from './ShowReport'
+import cn from 'classnames'
 
 export const Report = ({expanded, setExpanded}) => {
   const [reports, setReports] = useState([])
@@ -21,6 +22,7 @@ export const Report = ({expanded, setExpanded}) => {
         {!form ? (
           <div className={styles.reportDetails}>
             <ShowReport report={actieReport ? actieReport : reports[reports.length-1]}/>
+            <div className={styles.commentsReport}>Comments</div>
             <Details />
           </div>
         ):(

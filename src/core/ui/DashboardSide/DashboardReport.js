@@ -4,7 +4,7 @@ import { Btn } from '../Btn'
 import cn from 'classnames'
 export const DashboardReport = ({reports, setForm, setActiveReport, maxContent}) => {
     const handelClick = (report)=>{
-        console.log(report)
+        setForm(false)
         setActiveReport(report)
     }
     return (
