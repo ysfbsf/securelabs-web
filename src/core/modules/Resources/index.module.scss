@@ -1,0 +1,107 @@
+@import '../../../assets/styles/includes/vars';
+@import '../../../assets/styles/includes/mixins';
+
+.main{
+    display: flex;
+    height: 100%;
+    .container{
+        flex-grow: 1;
+    }
+}
+
+.container{
+    padding: 30px 53px;
+    width: 650px;
+}
+
+.card{
+    width: 650px;
+    margin: auto;
+    margin-top: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.division{
+    display: flex;
+}
+
+.part{
+    width: 50%;
+    text-align: left;
+    border: 1px solid #F1F1F5;
+    padding: 30px;
+    display: flex;
+    background-color: #fff;
+}
+
+.carre{
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #0095FF;
+}
+
+.text{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.headerCard{
+    display: flex;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.select{
+    text-align: right;
+    width: 50%;
+    color: #2463FA;
+    font-weight: bold;
+    font-size: 14px;
+    svg{
+        width: 10px;
+        height: 10px;
+        fill: #2463FA;
+        font-weight: bold;
+    }
+}
+
+.headerText{
+    width: 50%;
+    text-align: left;
+    text-align: left;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #171725;
+    opacity: 1;
+}
+
+.headerWhite{
+    background-color: #fff;
+}
+
+.star{
+    width: 20px;
+    height: 20px;
+    fill: #ccc;
+    margin-right: 2px;
+}
+
+.groupStar{
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    color: #ccc;
+}
+
+.activeStar{
+    fill: #FFC542 !important; 
+}
+
+.starRank{
+    padding-top: 5px;
+    margin-left: 7px;
+}
