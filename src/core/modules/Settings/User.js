@@ -66,13 +66,13 @@ export const User = () => {
       lastUpdated: 'lkigblgbl'
     },
     {
-      id:1,
+      id:2,
       controle: 'blalalal',
       activity: 'hjglgbkjhbkljhknm!:',
       lastUpdated: 'lkigblgbl'
     },
     {
-      id:1,
+      id:3,
       controle: 'blalalal',
       activity: 'hjglgbkjhbkljhknm!:',
       lastUpdated: 'lkigblgbl'
@@ -100,14 +100,17 @@ export const User = () => {
 
         {showData && 
           <table className={styles.tableSettingUser}>
-            <tr>
+            <thead>
+              <tr>
               <th>User</th>
               <th>Email</th>
               <th>Role</th>
               <th className={styles.tdOption}>Options</th>
-            </tr>
+              </tr>
+            </thead>
             {data.map(user=>(
-              <tr>
+              <tbody key={user.id}>
+                <tr>
                 <td>{user.firstName+' '+user.lastName}</td>
                 <td>{user.email}</td>
                 <td>{user.role}</td>
@@ -120,7 +123,8 @@ export const User = () => {
                       activeData={user}
                     />
                 </td>
-              </tr>
+                </tr>
+              </tbody>
             ))}
           </table>
         }
@@ -163,17 +167,21 @@ export const User = () => {
           <div>
             <div className={styles.headerDataUserActivity}>User : {activeItem.firstName+' '+activeItem.lastName}</div>
             <table className={styles.tableSettingUserActivity}>
-            <tr className={styles.trHeader}>
-              <th>Controle</th>
-              <th>Activity</th>
-              <th className={styles.updateStyle}>Last Update</th>
-            </tr>
-            {activity.map( a => (
+            <thead className={styles.trHeader}>
               <tr>
-                <td>{a.controle}</td>
-                <td>{a.activity}</td>
-                <td className={styles.updateStyle}>{a.lastUpdated}</td>
+                <th>Controle</th>
+                <th>Activity</th>
+                <th className={styles.updateStyle}>Last Update</th>
               </tr>
+            </thead>
+            {activity.map( a => (
+              <tbody key={a.id}>
+                <tr>
+                  <td>{a.controle}</td>
+                  <td>{a.activity}</td>
+                  <td className={styles.updateStyle}>{a.lastUpdated}</td>
+                </tr>
+              </tbody>
             ))}
           </table>
           </div>
