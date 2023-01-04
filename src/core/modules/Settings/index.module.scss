@@ -219,6 +219,7 @@ th {
 .hederIntegration{
   display: flex;
   justify-content: right;
+  font-weight: bold;
 }
 
 .socialMediaGroup{
@@ -263,4 +264,15 @@ th {
   font-size: 15px;
   color: #999;
   margin-top: 5px;
+}
+
+.toggleSwitch{
+  width: 44px !important;
+  height: 26px !important;
+  span{
+    &::before{
+      width: 19px !important;
+      height: 19px !important;
+    }
+  }
 }

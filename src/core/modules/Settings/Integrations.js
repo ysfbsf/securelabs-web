@@ -21,7 +21,7 @@ export const Integrations = () => {
               <div className={styles.apiKey}>Api Key :</div>
             </div>
           </div>
-          <div className={styles.status}> <ToggleSwitch /> </div>
+          <div className={styles.status}> <ToggleSwitch className={styles.toggleSwitch}/> </div>
         </div>
         <hr className={styles.userHr}/>
        
@@ -35,7 +35,7 @@ export const Integrations = () => {
               <div className={styles.apiKey}>Api Key :</div>
             </div>
           </div>
-          <div className={styles.status}> <ToggleSwitch /> </div>
+          <div className={styles.status}> <ToggleSwitch className={styles.toggleSwitch}/> </div>
         </div>
         <hr className={styles.userHr}/>
 
@@ -49,7 +49,7 @@ export const Integrations = () => {
               <div className={styles.apiKey}>Api Key :</div>
             </div>
           </div>
-          <div className={styles.status}> <ToggleSwitch /> </div>
+          <div className={styles.status}> <ToggleSwitch className={styles.toggleSwitch}/> </div>
         </div>
         <hr className={styles.userHr}/>
 
@@ -63,7 +63,7 @@ export const Integrations = () => {
               <div className={styles.apiKey}>Api Key :</div>
             </div>
           </div>
-          <div className={styles.status}> <ToggleSwitch /> </div>
+          <div className={styles.status}> <ToggleSwitch className={styles.toggleSwitch}/> </div>
         </div>
         <hr className={styles.userHr}/>
 
@@ -77,7 +77,7 @@ export const Integrations = () => {
               <div className={styles.apiKey}>Api Key :</div>
             </div>
           </div>
-          <div className={styles.status}> <ToggleSwitch /> </div>
+          <div className={styles.status}> <ToggleSwitch className={styles.toggleSwitch}/> </div>
         </div>
         
       </div>
