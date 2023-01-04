@@ -7,7 +7,7 @@ import { useMobile } from '../../hooks/useMobile'
 import { useToggle } from '../../hooks/useToggle'
 import { SvgSprite } from '../SvgSprite/SvgSprite'
 
-export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions, toggleIsOpenedActions}) => {
+export const Actions = ({actions, className, setActiveItem, activeData, noIcon, isOpenedActions, toggleIsOpenedActions, header=true}) => {
     const isTablet = useMobile(769)
     const {isOpened, toggleIsOpened} = useToggle(isOpenedActions)
     const action = useRef()
@@ -15,7 +15,7 @@ export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions, toggle
     const handleClick = e => {
         if (isOpened && !action.current.contains(e.target)) {
             toggleIsOpened()
-            toggleIsOpenedActions()
+            toggleIsOpenedActions && toggleIsOpenedActions()
         }
     }
 
@@ -36,21 +36,23 @@ export const Actions = ({actions, setActiveItem, noIcon, isOpenedActions, toggle
             }
             {
                 (isOpened || isOpenedActions) && (
-                    <div className={styles.actionsContent}>
-                        <div className={styles.headerAction}>
+                    <div className={cn(styles.actionsContent,{
+                        [styles.actionUser]: className,
+                    })}>
+                        {header && <div className={styles.headerAction}>
                             <div className={styles.addUser}>Add Stakeholder</div>
                             <SvgSprite spriteID={'add'}  className={styles.addIcon}/>
-                        </div>
+                        </div>}
                         {
                             actions.map(actionItem => actionItem && (
                                 <div key={actionItem.id} className={cn(styles.actionsContentBtn, {
                                     [styles.actionsContentBtnDelete]: actionItem.delete,
                                 })} onClick={() => {
                                     actionItem.onClick()
-                                    setActiveItem && setActiveItem()
+                                    setActiveItem && setActiveItem(activeData)
                                 }}>
                                     <div>{actionItem.text}</div>
-                                    <SvgSprite spriteID={actionItem.icon}/>
+                                    {actionItem.icon && <SvgSprite spriteID={actionItem.icon}/>}
                                 </div>
                             ))
                         }

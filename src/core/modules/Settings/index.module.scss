@@ -1,0 +1,266 @@
+@import '/src/assets/styles/includes/vars';
+@import '/src/assets/styles/includes/mixins';
+
+.main {
+  display: flex;
+  padding: 50px;
+  justify-content: space-around;
+}
+
+
+.content {
+  width: 800px;
+}
+
+.item {
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.activeItem {
+  color: $blue;
+}
+
+.general {
+  width: 100%;
+  background-color: #fff;
+  padding: 24px;
+  border: 1px solid #EAEAEA;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.headerCard {
+  text-align: left;
+  font-size: 24px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.formCard {
+  margin: 50px 0px;
+}
+
+.inputsLabel {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.lineSettingCard {
+  color: #EAEAEA;
+  height: 1px;
+  width: 100%;
+  opacity: 0.3;
+  margin-top: 50px;
+}
+
+.labelCard {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  width: 30%;
+}
+
+.inputSetting {
+  font-size: 14px;
+  width: 50%;
+}
+
+.uploadBtnWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 50%;
+}
+
+.btn {
+  border: 2px solid gray;
+  border-style: dashed;
+  color: $blue;
+  background-color: white;
+  padding: 15px 20px;
+  border-radius: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.uploadBtnWrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.imgIcon {
+  width: 15px;
+  height: 15px;
+  fill: $blue;
+  margin-left: 15px;
+}
+
+.addUser {
+  display: flex;
+  justify-content: right;
+}
+
+.addBtnUser {
+  background-color: $blue;
+  color: #fff;
+  width: 150px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.svgMore {
+  width: 15px;
+  height: 15px;
+}
+
+.tableSettingUser {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.tdOption {
+  min-height: max-content;
+  text-align: right !important;
+  text-align: -webkit-right !important;
+}
+
+th,
+td {
+  padding: 20px 15px;
+}
+
+th {
+  border-bottom: 1px solid #ddd;
+  // padding-bottom: 50px;
+}
+
+.modifyUserBtn {
+  background-color: $redDark;
+}
+
+.dataUser {
+  padding: 20px 20px;
+  padding-bottom: 0px;
+}
+
+.headerDataUser {
+  padding: 30px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.userHr {
+  background-color: #ddd;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.dataUserDetail {
+  display: flex;
+  padding: 0px 10px;
+  margin-top: 25px;
+}
+
+.labelDataUser {
+  font-size: 14px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.meginButton {
+  margin-bottom: 20px;
+}
+
+.detailUser {
+  font-size: 14px;
+}
+
+.updateStyle {
+  width: 140px;
+}
+
+.trHeader>th {
+  color: #999;
+  font-weight: normal !important;
+}
+
+.updateStyle {
+  color: #999;
+}
+
+.headerDataUserActivity{
+  font-size: 16px;
+}
+
+.tableSettingUserActivity{
+  width: 100%;
+  text-align: left;
+  margin-top: 30px;
+}
+
+.hederIntegration{
+  display: flex;
+  justify-content: right;
+}
+
+.socialMediaGroup{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.labelAndSvg{
+  display: flex;
+}
+
+.backSvg{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 4px;
+
+  svg{
+    margin: 0 auto !important;
+    fill: #000000 !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+.socialLabelIntegra{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.nameSocial{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.apiKey{
+  font-size: 15px;
+  color: #999;
+  margin-top: 5px;
+}

@@ -56,6 +56,7 @@
     top: 100%;
     right: -5px;
     z-index: 3;
+    border: 1px solid #EAEAEA;
 
     @media (max-width: 768px) {
         min-width: unset;
@@ -125,3 +126,9 @@
     margin: auto;
     margin-right: 0px;
 }
+
+.actionUser{
+    width: max-content !important;
+    min-width: auto !important;
+    padding: 4px;
+  }
