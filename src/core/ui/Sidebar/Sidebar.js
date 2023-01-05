@@ -5,6 +5,7 @@ import cn from 'classnames'
 import styles from './index.module.scss'
 import { Link } from "react-router-dom";
 import { SvgSprite } from "../SvgSprite/SvgSprite";
+import logo from '../../../assets/images/logo.png'
 
 export const Sidebar = ({activeItem, expanded}) => {
   
@@ -73,6 +74,12 @@ export const Sidebar = ({activeItem, expanded}) => {
     <div className={cn(styles.sidebar,{
       [styles.expanded] : expanded,
     })}>
+      <div className={styles.logo}>
+        {/* <SvgSprite className={styles.svgIconsTop} spriteID={'menu'} /> */}
+        <div className={styles.logoText}>
+          <img src={logo} alt='logo'/>
+        </div>
+      </div>
       {menuItems.map((item, index) => {
         return (
           <Link

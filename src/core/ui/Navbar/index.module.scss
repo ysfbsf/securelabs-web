@@ -4,7 +4,7 @@
 .container{
     text-align: center;
     background-color: white;
-    padding: 24px;
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
 }
@@ -36,7 +36,17 @@
 .header{
   display: flex;
   justify-content: center;
-  width: 220px;
+  width: 250px;
+  padding: 24px;
+  background: #fff;
+}
+
+.maxHeader{
+  width: 230px !important;
+}
+
+.transp{
+  background: transparent !important;
 }
 
 .name{
@@ -70,11 +80,27 @@
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 20px;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
 .imageProfile{
   display: inline-grid;
   display: -ms-inline-grid;
   display: -moz-inline-grid;
+}
+
+.svgNavigation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  padding: 24px;
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+  .reversSvg{
+    transform: rotate(180deg);
+    margin-right: 10px;
+  }
 }

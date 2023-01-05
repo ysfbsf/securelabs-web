@@ -74,7 +74,7 @@
 }
 
 .sidebar > *:first-child {
-  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 .sidebar > *:last-child {
   // margin-top: auto;
@@ -152,4 +152,27 @@
 
 .activeSvg{
   fill: $blue;
+}
+
+.svgIconsTop{
+  height: 35px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.logo{
+  padding: 24px;
+  padding-left: 18px;
+  display: flex;
+}
+
+.logoText{
+  margin-bottom: auto;
+  margin-top: auto;
+  width: 150px;
+  height: 27px;
+  img{
+    width: 150px;
+    height: 27px;
+  }
 }
